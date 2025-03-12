@@ -9,7 +9,7 @@
 - Add role, user(according to role), classroom, mark attendance.
 - View report and data analysis.
 
-This project is design and develop by Padam Thapa Magar 
+This project is designed and developed by Padam Thapa Magar 
 with collaboration with Pemba Tamang Lama
 [It is 4sem Project]
 
