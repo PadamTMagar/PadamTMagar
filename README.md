@@ -70,8 +70,10 @@
 
 ### 🕹️ Play My GitHub Contributions as Pac-Man!
 
-<iframe src="https://abozanona.github.io/pacman-contribution-graph/embeded/canvas.html?username=PadamTMagar&platform=github" 
-    width="800" height="600" frameborder="0"></iframe>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PadamTMagar/PadamTMagar/output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/PadamTMagar/PadamTMagar/output/pacman-contribution-graph.svg">
+  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/PadamTMagar/PadamTMagar/output/pacman-contribution-graph.svg">
+</picture>
 
 _generated with [abozanona/pacman-contribution-graph](https://abozanona.github.io/pacman-contribution-graph/)_
-
