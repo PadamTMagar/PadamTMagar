@@ -62,7 +62,7 @@
 ---
 
 ### 📊 GitHub Stats
----
+
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=PadamTMagar&show_icons=true&locale=en&layout=compact" alt="PadamTMagar's Top Languages" />
   &nbsp;&nbsp;&nbsp;
