@@ -66,10 +66,14 @@
 
 ---
 
-### 🎮 Contribution Activity
+---
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PadamTMagar/PadamTMagar/output/pacman-contribution-graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/PadamTMagar/PadamTMagar/output/pacman-contribution-graph.svg">
-  <img alt="contribution graph" src="https://raw.githubusercontent.com/PadamTMagar/PadamTMagar/output/pacman-contribution-graph.svg">
-</picture>
+### 📊 My GitHub Stats & Activity
+
+<div align="center">
+  <img src="https://streak-stats.demolab.com?user=PadamTMagar&theme=dracula&hide_border=false" height="150" />
+  <img src="https://github-profile-trophy.vercel.app/?username=PadamTMagar&theme=dracula&row=1&no-frame=true" height="150" />
+  <br/><br/>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=PadamTMagar&theme=dracula&area=true" width="100%"/>
+</div>
+
