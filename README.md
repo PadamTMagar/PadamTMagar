@@ -10,11 +10,11 @@
 </p>
 
 ### Find me around the web 🌎
----
+
 - Learning in public on [Twitch](https://www.twitch.tv/yourusername) 📹 ✍🏾  
 - Tinkering with interactions on [CodePen](https://codepen.io/yourusername) 🏓  
 - Sharing updates on [LinkedIn](https://www.linkedin.com/in/yourprofile) 💼
-
+<img src="https://raw.githubusercontent.com/PadamTMagar/PadamTMagar/main/banner.png" alt="Padam Thapa Magar Banner" />
 
 ---
 
