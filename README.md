@@ -68,12 +68,10 @@
 
 ---
 
-### 📊 My GitHub Stats & Activity
+### 🕹️ Play My GitHub Contributions as Pac-Man!
 
-<div align="center">
-  <img src="https://streak-stats.demolab.com?user=PadamTMagar&theme=dracula&hide_border=false" height="150" />
-  <img src="https://github-profile-trophy.vercel.app/?username=PadamTMagar&theme=dracula&row=1&no-frame=true" height="150" />
-  <br/><br/>
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=PadamTMagar&theme=dracula&area=true" width="100%"/>
-</div>
+<iframe src="https://abozanona.github.io/pacman-contribution-graph/embeded/canvas.html?username=PadamTMagar&platform=github" 
+    width="800" height="600" frameborder="0"></iframe>
+
+_generated with [abozanona/pacman-contribution-graph](https://abozanona.github.io/pacman-contribution-graph/)_
 
