@@ -63,13 +63,12 @@
 
 ### 📊 GitHub Stats
 ---
-<p align="center">
+<div align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=PadamTMagar&show_icons=true&locale=en&layout=compact" alt="PadamTMagar's Top Languages" />
-</p>
-
-<p align="center">
+  &nbsp;&nbsp;&nbsp;
   <img src="https://github-readme-stats.vercel.app/api?username=PadamTMagar&show_icons=true&locale=en" alt="PadamTMagar's GitHub Stats" />
-</p>
+</div>
+
 
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=PadamTMagar&" alt="PadamTMagar's Streak Stats" />
