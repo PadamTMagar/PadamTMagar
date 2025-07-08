@@ -1,8 +1,9 @@
+
+<h1 align="center">Hey 👋 What's Up? I'm Padam Thapa Magar</h1>
 <p align="center">
   <img src="https://raw.githubusercontent.com/PadamTMagar/PadamTMagar/main/banner.png" alt="Padam Thapa Magar Banner" />
 </p>
 
-<h1 align="center">Hey 👋 What's Up? I'm Padam Thapa Magar</h1>
 
 <p align="center">
   🔥 Passionate about tech, design, and ethical hacking<br/>
