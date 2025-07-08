@@ -8,7 +8,7 @@
 <p>
   I’m an aspiring ethical hacker 🔐 and full-stack developer 💻 passionate about cybersecurity, creative design 🎨, and building real-world web solutions 🌐. I love exploring new tech, learning frontend tools like Figma & Illustrator, backend systems, and diving into security practices. Always curious and driven to blend tech, creativity, and community impact 🚀
 </p>
-
+<!--
 <table width="100%" style="border:none;">
 <tr>
 <td style="border:none;">
@@ -27,6 +27,7 @@
 </td>
 </tr>
 </table>
+-->
 
 ---
 
