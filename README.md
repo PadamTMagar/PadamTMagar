@@ -59,12 +59,8 @@
 
 ### 📊 GitHub Stats
 ---
-
-### 📊 GitHub Stats & Trophies
-
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=PadamTMagar&show_icons=true&locale=en&layout=compact" alt="PadamTMagar's Top Languages" />
-  <img src="https://github-profile-trophy.vercel.app/?username=PadamTMagar&theme=dracula&row=1&no-frame=true" alt="GitHub Trophies" />
 </p>
 
 <p align="center">
@@ -77,9 +73,11 @@
 
 ---
 
+### 📊 GitHub Stats & Trophies
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=PadamTMagar&show_icons=true&locale=en&layout=compact" alt="PadamTMagar's Top Languages" />
+  <img src="https://github-profile-trophy.vercel.app/?username=PadamTMagar&theme=dracula&row=1&no-frame=true" alt="GitHub Trophies" />
 </p>
 
 <p align="center">
