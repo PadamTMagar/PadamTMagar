@@ -68,7 +68,7 @@
 
 ---
 
-### 🕹️ Play My GitHub Contributions as Pac-Man!
+### 🕹️ My GitHub Contributions as Pac-Man!
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PadamTMagar/PadamTMagar/output/pacman-contribution-graph-dark.svg">
