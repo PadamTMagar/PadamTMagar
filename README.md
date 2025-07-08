@@ -1,1 +1,75 @@
-![Metrics](https://metrics.lecoq.io/?template=classic&isocalendar=1&languages=1&stargazers=1&lines=1&habits=1&followup=1&people=1&stars=1&calendar=1&pagespeed=1&fortune=1&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&isocalendar=false&isocalendar.duration=half-year&languages=false&languages.limit=8&languages.threshold=0%25&languages.other=false&languages.colors=github&languages.sections=most-used&languages.indepth=false&languages.analysis.timeout=15&languages.analysis.timeout.repositories=7.5&languages.categories=markup%2C%20programming&languages.recent.categories=markup%2C%20programming&languages.recent.load=300&languages.recent.days=14&stargazers=false&stargazers.days=14&stargazers.charts=false&stargazers.charts.type=classic&stargazers.worldmap=false&stargazers.worldmap.sample=0&lines=false&lines.sections=base&lines.repositories.limit=4&lines.history.limit=1&lines.delay=0&stars=false&stars.limit=4&habits=false&habits.from=200&habits.days=14&habits.facts=true&habits.charts=true&habits.charts.type=graph&habits.trim=false&habits.languages.limit=8&habits.languages.threshold=0%25&followup=false&followup.sections=repositories&followup.indepth=false&followup.archived=true&people=false&people.limit=10&people.identicons=false&people.identicons.hide=false&people.size=28&people.types=followers%2C%20following&people.shuffle=false&calendar=false&calendar.limit=1&pagespeed=false&pagespeed.url=https%3A%2F%2Fwww.padammgr.com.np%2F&pagespeed.detailed=false&pagespeed.screenshot=false&pagespeed.pwa=false&fortune=false&config.timezone=Asia%2FKatmandu)
+<h1 align="center">Hey 👋 What's Up? I'm Padam Thapa Magar</h1>
+
+<p align="center">
+  🔥 Passionate about tech, design, and ethical hacking<br/>
+  🎓 Learning every day | 🧠 Curious mind | 👨‍💻 Developer in progress
+</p>
+
+---
+
+### 💻 Tech Stack I Work With
+
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=c" height="50" />
+  <img src="https://skillicons.dev/icons?i=cpp" height="50" />
+  <img src="https://skillicons.dev/icons?i=cs" height="50" />
+  <img src="https://skillicons.dev/icons?i=html" height="50" />
+  <img src="https://skillicons.dev/icons?i=css" height="50" />
+  <img src="https://skillicons.dev/icons?i=js" height="50" />
+  <img src="https://skillicons.dev/icons?i=java" height="50" />
+  <img src="https://skillicons.dev/icons?i=php" height="50" />
+  <img src="https://skillicons.dev/icons?i=python" height="50" />
+</div>
+
+---
+
+### 🎨 Design & Tools
+
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=figma" height="50" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" height="50" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" height="50" />
+</div>
+
+---
+
+### 🕶️ Currently Into
+
+<div align="center">
+  <p>🚀 Exploring Cybersecurity | 🕵️‍♂️ Ethical Hacking | 🛠️ Building fun & functional web projects</p>
+</div>
+
+---
+
+### 📫 Let's Connect
+
+<div align="center">
+  <a href="https://linkedin.com/in/YOUR_LINK_HERE">
+    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&style=for-the-badge" height="25" />
+  </a>
+  <a href="https://twitter.com/YOUR_LINK_HERE">
+    <img src="https://img.shields.io/static/v1?message=Twitter&logo=twitter&label=&color=1DA1F2&logoColor=white&style=for-the-badge" height="25" />
+  </a>
+  <a href="https://discord.com/users/YOUR_ID_HERE">
+    <img src="https://img.shields.io/static/v1?message=Discord&logo=discord&label=&color=7289DA&logoColor=white&style=for-the-badge" height="25" />
+  </a>
+</div>
+
+---
+
+### 📊 GitHub Stats
+
+<div align="center">
+  <img src="https://streak-stats.demolab.com?user=PadamTMagar&theme=dracula&hide_border=false" height="150" />
+  <img src="https://github-profile-trophy.vercel.app/?username=PadamTMagar&theme=dracula&row=1&no-frame=true" height="150" />
+</div>
+
+---
+
+### 🎮 Contribution Activity
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PadamTMagar/PadamTMagar/output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/PadamTMagar/PadamTMagar/output/pacman-contribution-graph.svg">
+  <img alt="contribution graph" src="https://raw.githubusercontent.com/PadamTMagar/PadamTMagar/output/pacman-contribution-graph.svg">
+</picture>
