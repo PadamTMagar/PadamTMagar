@@ -8,26 +8,6 @@
 <p>
   I’m an aspiring ethical hacker 🔐 and full-stack developer 💻 passionate about cybersecurity, creative design 🎨, and building real-world web solutions 🌐. I love exploring new tech, learning frontend tools like Figma & Illustrator, backend systems, and diving into security practices. Always curious and driven to blend tech, creativity, and community impact 🚀
 </p>
-<!--
-<table width="100%" style="border:none;">
-<tr>
-<td style="border:none;">
-
-### Find me around the web 🌎
-
-- Learning in public on [Twitch](https://www.twitch.tv/yourusername) 📹 ✍🏾  
-- Tinkering with interactions on [CodePen](https://codepen.io/yourusername) 🏓  
-- Sharing updates on [LinkedIn](https://www.linkedin.com/in/yourprofile) 💼
-
-</td>
-<td width="160" align="right" valign="top" style="border:none;">
-
-<img src="https://github.com/PadamTMagar/PadamTMagar/blob/main/hacking.gif" alt="Hacking Banner" width="140" />
-
-</td>
-</tr>
-</table>
--->
 
 ---
 
