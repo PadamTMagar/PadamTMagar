@@ -75,8 +75,9 @@
 
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=PadamTMagar" alt="PadamTMagar's Streak Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=PadamTMagar" alt="PadamTMagar's GitHub Streak" />
 </p>
+
 
 <p align="center">  
   <img src="https://github-profile-trophy.vercel.app/?username=PadamTMagar&theme=dracula&row=1&no-frame=true" alt="GitHub Trophies" />
