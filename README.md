@@ -75,7 +75,7 @@
 
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=PadamTMagar&" alt="PadamTMagar's Streak Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=PadamTMagar" alt="PadamTMagar's Streak Stats" />
 </p>
 
 <p align="center">  
