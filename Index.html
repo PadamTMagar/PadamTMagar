@@ -1,62 +1,516 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Padam Thapa Magar</title> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PadamT — Cybersecurity Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Share+Tech+Mono&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <div class="logo"><b>Folio</b><bo>.</bo></div>
-            <ul class="divbar">
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Skils</a></li>
-                <li><a href="">Blog</a></li>
-            </ul>
-            <div class="socialmedia">
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-octopus-deploy"></i></a>
-            </div>  
-        </nav>
-        <div class="wrapper">
-            <div class="header">
-                <span span class="Topline">Hello</span>
-                <h1>I'm <span class="multitxt"></span></h1>
-                <p>Greeting! I am Padam Thapa Magar, a BCA student with skills in front-end development (HTML, CSS), Python, Linux,
-                     and Ethical hacking. I am also a dedicated bug bounty hunter, focusing on identifying and resolving system vulnerabilities. </p>
-                <div class="bton">
-                    <button>Download CV</button>
-                    <button>Hire Me</button>
-                </div>
-            </div>
-            <div class="header1">
-                <div class="imagebox">
-                    <img src="asset/splash.png" id="splash">
-                    <img src="asset/photo.png" class="personalphoto"> 
-
-                </div>
-            </div> 
-    
-        </div>
+  <!-- Loading Screen -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader__panel">
+      <div class="loader__title">INITIALIZING</div>
+      <div class="loader__bar">
+        <div class="loader__barFill" id="loaderBar"></div>
+      </div>
+      <div class="loader__log" id="loaderLog"></div>
+      <div class="loader__hint">Press <span class="kbd">Enter</span> to skip</div>
     </div>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-    var typed = new Typed(".multitxt", {
-      strings: ["coder", "youtuber","E.hacker","gamer"],
-      loop: true,
-      typeSpeed: 100,
-      backspeed: 80,
-      backdelay: 1500,
+  </div>
 
-    });
-  </script>
- 
+  <!-- Cursor glow -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor cursor--soft" id="cursorSoft"></div>
+
+  <!-- Background canvas layers -->
+  <canvas id="matrix" class="bgCanvas" aria-hidden="true"></canvas>
+
+  <!-- Background overlay (grid + noise) -->
+  <div class="bgOverlay" aria-hidden="true">
+    <div class="grid"></div>
+    <div class="noise"></div>
+    <div class="vignette"></div>
+  </div>
+
+  <!-- Top Nav -->
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Home">
+      <span class="brand__dot"></span>
+      <span class="brand__text">PADAMT<span class="brand__muted">/</span>CYBER</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="nav__link" href="#about">about</a>
+      <a class="nav__link" href="#projects">projects</a>
+      <a class="nav__link" href="#experience">experience</a>
+      <a class="nav__link" href="#skills">skills</a>
+      <a class="nav__link" href="#contact">contact</a>
+    </nav>
+
+    <div class="topbar__actions">
+      <button class="iconBtn" id="audioToggle" type="button" aria-label="Toggle audio">
+        <span class="iconBtn__ring"></span>
+        <span class="iconBtn__text">AUDIO</span>
+      </button>
+
+      <button class="iconBtn iconBtn--menu" id="menuToggle" type="button" aria-label="Open menu">
+        <span class="iconBtn__ring"></span>
+        <span class="iconBtn__text">MENU</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__panel hud">
+      <div class="drawer__title">NAVIGATION</div>
+      <a class="drawer__link" href="#about">> about</a>
+      <a class="drawer__link" href="#projects">> projects</a>
+      <a class="drawer__link" href="#experience">> experience</a>
+      <a class="drawer__link" href="#skills">> skills</a>
+      <a class="drawer__link" href="#contact">> contact</a>
+      <button class="drawer__close" id="drawerClose" type="button">close</button>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scrollHint" aria-hidden="true">
+    <div class="scrollHint__line"></div>
+    <div class="scrollHint__text">SCROLL</div>
+  </div>
+
+  <main id="home">
+    <!-- Hero -->
+    <section class="section hero">
+      <div class="hero__wrap">
+        <div class="hero__left">
+          <div class="terminal hud reveal" data-reveal>
+            <div class="terminal__top">
+              <div class="terminal__lights">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="terminal__title">terminal://boot</div>
+            </div>
+            <div class="terminal__body">
+              <div class="bootLine">
+                <span class="prompt">root@padamt</span><span class="dim">:</span><span class="path">~</span><span class="dim">$</span>
+                <span class="typed" id="typed"></span><span class="caret" aria-hidden="true"></span>
+              </div>
+              <div class="bootMeta">
+                <div class="tag">STATUS: <span class="ok">ONLINE</span></div>
+                <div class="tag">MODE: <span class="ok">ETHICAL</span></div>
+                <div class="tag">SECURITY: <span class="warn">HARDENED</span></div>
+              </div>
+            </div>
+          </div>
+
+          <h1 class="hero__name reveal" data-reveal>
+            <span class="glitch" data-text="PADAM T">PADAM T</span>
+          </h1>
+
+          <p class="hero__subtitle reveal" data-reveal>
+            Ethical Hacker <span class="sep">|</span> Penetration Tester <span class="sep">|</span> Cybersecurity Researcher
+          </p>
+
+          <div class="hero__cta reveal" data-reveal>
+            <a class="btn btn--hud" href="#" download>
+              <span class="btn__ring"></span>
+              <span class="btn__text">Download CV</span>
+              <span class="btn__corner btn__corner--tl"></span>
+              <span class="btn__corner btn__corner--tr"></span>
+              <span class="btn__corner btn__corner--bl"></span>
+              <span class="btn__corner btn__corner--br"></span>
+            </a>
+
+            <a class="btn btn--ghost" href="#projects">
+              <span class="btn__text">View Projects</span>
+            </a>
+          </div>
+
+          <div class="hero__badges reveal" data-reveal>
+            <div class="pill">OWASP</div>
+            <div class="pill">Burp Suite</div>
+            <div class="pill">Linux</div>
+            <div class="pill">Python</div>
+            <div class="pill">React</div>
+          </div>
+        </div>
+
+        <div class="hero__right reveal" data-reveal>
+          <div class="hudCard hud">
+            <div class="hudCard__header">
+              <div class="hudCard__title">SYSTEM HUD</div>
+              <div class="hudCard__small">v3.7 / secure-session</div>
+            </div>
+
+            <div class="hudCard__body">
+              <div class="rings">
+                <div class="ring" data-ring="78">
+                  <svg viewBox="0 0 120 120">
+                    <circle class="ring__bg" cx="60" cy="60" r="48"></circle>
+                    <circle class="ring__fg" cx="60" cy="60" r="48"></circle>
+                  </svg>
+                  <div class="ring__label">
+                    <div class="ring__value">78%</div>
+                    <div class="ring__name">Threat Intel</div>
+                  </div>
+                </div>
+
+                <div class="ring" data-ring="91">
+                  <svg viewBox="0 0 120 120">
+                    <circle class="ring__bg" cx="60" cy="60" r="48"></circle>
+                    <circle class="ring__fg" cx="60" cy="60" r="48"></circle>
+                  </svg>
+                  <div class="ring__label">
+                    <div class="ring__value">91%</div>
+                    <div class="ring__name">Pentest</div>
+                  </div>
+                </div>
+
+                <div class="ring" data-ring="84">
+                  <svg viewBox="0 0 120 120">
+                    <circle class="ring__bg" cx="60" cy="60" r="48"></circle>
+                    <circle class="ring__fg" cx="60" cy="60" r="48"></circle>
+                  </svg>
+                  <div class="ring__label">
+                    <div class="ring__value">84%</div>
+                    <div class="ring__name">AppSec</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hudLines" aria-hidden="true">
+                <div class="hudLines__line"></div>
+                <div class="hudLines__line"></div>
+                <div class="hudLines__line"></div>
+              </div>
+
+              <div class="miniStats">
+                <div class="miniStat">
+                  <div class="miniStat__k">CVE triage</div>
+                  <div class="miniStat__v">rapid</div>
+                </div>
+                <div class="miniStat">
+                  <div class="miniStat__k">Web audits</div>
+                  <div class="miniStat__v">pro</div>
+                </div>
+                <div class="miniStat">
+                  <div class="miniStat__k">IR readiness</div>
+                  <div class="miniStat__v">high</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hudCard__footer">
+              <div class="tiny">tip: hover cards to reveal diagnostics</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Connection lines -->
+      <div class="connectors" aria-hidden="true">
+        <div class="connector connector--a"></div>
+        <div class="connector connector--b"></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="section__head reveal" data-reveal>
+        <div class="kicker">/ about</div>
+        <h2 class="title">Operator Profile</h2>
+        <p class="lead">I build secure systems, break insecure ones (ethically), and ship high-performance web apps.</p>
+      </div>
+
+      <div class="aboutGrid">
+        <div class="terminal hud reveal" data-reveal>
+          <div class="terminal__top">
+            <div class="terminal__lights">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="terminal__title">terminal://whoami</div>
+          </div>
+          <div class="terminal__body terminal__body--about">
+            <pre class="pre">
+<span class="dim">[init]</span> loading identity module...
+<span class="ok">[ok]</span> name: Padam T
+<span class="ok">[ok]</span> focus: web security, pentesting, secure dev
+<span class="warn">[!]</span> principle: measure twice, exploit once (responsibly)
+<span class="dim">[note]</span> shipping: dashboards, tools, automation, AI prototypes
+            </pre>
+          </div>
+        </div>
+
+        <div class="stats reveal" data-reveal>
+          <div class="statCard hud">
+            <div class="statCard__k">Years</div>
+            <div class="statCard__v">5+</div>
+            <div class="statCard__bar"></div>
+          </div>
+          <div class="statCard hud">
+            <div class="statCard__k">Audits</div>
+            <div class="statCard__v">40+</div>
+            <div class="statCard__bar"></div>
+          </div>
+          <div class="statCard hud">
+            <div class="statCard__k">Tools</div>
+            <div class="statCard__v">12</div>
+            <div class="statCard__bar"></div>
+          </div>
+          <div class="statCard hud">
+            <div class="statCard__k">CTFs</div>
+            <div class="statCard__v">100+</div>
+            <div class="statCard__bar"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="section__head reveal" data-reveal>
+        <div class="kicker">/ projects</div>
+        <h2 class="title">Selected Builds</h2>
+        <p class="lead">Cyber tools, security dashboards, AI experiments, and web engineering.</p>
+      </div>
+
+      <div class="projectGrid">
+        <article class="projectCard hud reveal" data-reveal>
+          <div class="projectCard__top">
+            <div class="chip">Ethical Hacking Tool</div>
+            <h3 class="projectCard__title">Recon Nexus</h3>
+            <p class="projectCard__desc">Automated recon workflow: subdomains, ports, tech fingerprinting, and report export.</p>
+          </div>
+          <div class="projectCard__meta">
+            <span>Python</span><span>OSINT</span><span>CLI</span>
+          </div>
+          <div class="projectCard__actions">
+            <a class="link" href="#">view</a>
+            <a class="link" href="#">code</a>
+          </div>
+        </article>
+
+        <article class="projectCard hud reveal" data-reveal>
+          <div class="projectCard__top">
+            <div class="chip">Security Dashboard</div>
+            <h3 class="projectCard__title">SOC HUD</h3>
+            <p class="projectCard__desc">Neon-themed SOC visualization for alerts, anomalies, and incident timelines.</p>
+          </div>
+          <div class="projectCard__meta">
+            <span>React</span><span>Charts</span><span>SIEM</span>
+          </div>
+          <div class="projectCard__actions">
+            <a class="link" href="#">view</a>
+            <a class="link" href="#">code</a>
+          </div>
+        </article>
+
+        <article class="projectCard hud reveal" data-reveal>
+          <div class="projectCard__top">
+            <div class="chip">AI Project</div>
+            <h3 class="projectCard__title">PhishShield AI</h3>
+            <p class="projectCard__desc">Email and URL risk scoring with explainable signals and sandbox summaries.</p>
+          </div>
+          <div class="projectCard__meta">
+            <span>Python</span><span>NLP</span><span>ML</span>
+          </div>
+          <div class="projectCard__actions">
+            <a class="link" href="#">view</a>
+            <a class="link" href="#">code</a>
+          </div>
+        </article>
+
+        <article class="projectCard hud reveal" data-reveal>
+          <div class="projectCard__top">
+            <div class="chip">Web Development</div>
+            <h3 class="projectCard__title">Secure Commerce UI</h3>
+            <p class="projectCard__desc">Fast frontend with security-first patterns: CSP, auth flows, and safe rendering.</p>
+          </div>
+          <div class="projectCard__meta">
+            <span>Web</span><span>Security</span><span>Performance</span>
+          </div>
+          <div class="projectCard__actions">
+            <a class="link" href="#">view</a>
+            <a class="link" href="#">code</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience">
+      <div class="section__head reveal" data-reveal>
+        <div class="kicker">/ experience</div>
+        <h2 class="title">Ops Timeline</h2>
+        <p class="lead">Hover rows for expansion and neon activation.</p>
+      </div>
+
+      <div class="timeline hud reveal" data-reveal>
+        <div class="timelineRow active">
+          <div class="timelineRow__year">2026</div>
+          <div class="timelineRow__body">
+            <div class="timelineRow__title">Security Engineer / Research</div>
+            <div class="timelineRow__desc">Web app pentesting, threat modeling, hardening pipelines, vuln triage.</div>
+          </div>
+          <div class="timelineRow__tag">active</div>
+        </div>
+
+        <div class="timelineRow">
+          <div class="timelineRow__year">2025</div>
+          <div class="timelineRow__body">
+            <div class="timelineRow__title">Freelance Pentester</div>
+            <div class="timelineRow__desc">OWASP audits, SSRF/XSS/IDOR findings, reporting, retesting.</div>
+          </div>
+          <div class="timelineRow__tag">contracts</div>
+        </div>
+
+        <div class="timelineRow">
+          <div class="timelineRow__year">2024</div>
+          <div class="timelineRow__body">
+            <div class="timelineRow__title">Developer (Secure Web)</div>
+            <div class="timelineRow__desc">React apps, API security, auth hardening, monitoring, CI security checks.</div>
+          </div>
+          <div class="timelineRow__tag">ship</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="section__head reveal" data-reveal>
+        <div class="kicker">/ skills</div>
+        <h2 class="title">Capability Matrix</h2>
+        <p class="lead">Animated bars + rotating circular indicators.</p>
+      </div>
+
+      <div class="skillsGrid">
+        <div class="skillBars hud reveal" data-reveal>
+          <div class="skillBar">
+            <div class="skillBar__top"><span>Networking</span><span class="dim">88%</span></div>
+            <div class="skillBar__track"><div class="skillBar__fill" style="--val:88"></div></div>
+          </div>
+          <div class="skillBar">
+            <div class="skillBar__top"><span>Linux</span><span class="dim">92%</span></div>
+            <div class="skillBar__track"><div class="skillBar__fill" style="--val:92"></div></div>
+          </div>
+          <div class="skillBar">
+            <div class="skillBar__top"><span>Web Security</span><span class="dim">90%</span></div>
+            <div class="skillBar__track"><div class="skillBar__fill" style="--val:90"></div></div>
+          </div>
+          <div class="skillBar">
+            <div class="skillBar__top"><span>React</span><span class="dim">82%</span></div>
+            <div class="skillBar__track"><div class="skillBar__fill" style="--val:82"></div></div>
+          </div>
+          <div class="skillBar">
+            <div class="skillBar__top"><span>Python</span><span class="dim">89%</span></div>
+            <div class="skillBar__track"><div class="skillBar__fill" style="--val:89"></div></div>
+          </div>
+          <div class="skillBar">
+            <div class="skillBar__top"><span>Ethical Hacking</span><span class="dim">93%</span></div>
+            <div class="skillBar__track"><div class="skillBar__fill" style="--val:93"></div></div>
+          </div>
+        </div>
+
+        <div class="skillOrbs reveal" data-reveal>
+          <div class="orb hud" data-ring="86">
+            <div class="orb__icon">⟡</div>
+            <div class="orb__name">AppSec</div>
+            <div class="orb__val">86</div>
+          </div>
+          <div class="orb hud" data-ring="90">
+            <div class="orb__icon">⌬</div>
+            <div class="orb__name">Pentest</div>
+            <div class="orb__val">90</div>
+          </div>
+          <div class="orb hud" data-ring="83">
+            <div class="orb__icon">⊹</div>
+            <div class="orb__name">Automation</div>
+            <div class="orb__val">83</div>
+          </div>
+          <div class="orb hud" data-ring="88">
+            <div class="orb__icon">⟁</div>
+            <div class="orb__name">Threat</div>
+            <div class="orb__val">88</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="section__head reveal" data-reveal>
+        <div class="kicker">/ contact</div>
+        <h2 class="title">Open a Secure Channel</h2>
+        <p class="lead">Click an endpoint to connect.</p>
+      </div>
+
+      <div class="contactGrid">
+        <div class="contactCard hud reveal" data-reveal>
+          <div class="contactCard__title">SOCIAL</div>
+          <div class="socials">
+            <a class="socialBtn" href="https://github.com/" target="_blank" rel="noreferrer">
+              <span class="socialBtn__ring"></span><span class="socialBtn__text">GitHub</span>
+            </a>
+            <a class="socialBtn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+              <span class="socialBtn__ring"></span><span class="socialBtn__text">LinkedIn</span>
+            </a>
+            <a class="socialBtn" href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+              <span class="socialBtn__ring"></span><span class="socialBtn__text">Instagram</span>
+            </a>
+            <a class="socialBtn" href="mailto:youremail@gmail.com">
+              <span class="socialBtn__ring"></span><span class="socialBtn__text">Gmail</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contactCard hud reveal" data-reveal>
+          <div class="contactCard__title">MESSAGE</div>
+          <form class="form" onsubmit="return false;">
+            <label class="field">
+              <span class="field__label">Name</span>
+              <input class="field__input" type="text" placeholder="operator_name" />
+            </label>
+            <label class="field">
+              <span class="field__label">Email</span>
+              <input class="field__input" type="email" placeholder="operator@domain.com" />
+            </label>
+            <label class="field">
+              <span class="field__label">Message</span>
+              <textarea class="field__input field__input--area" rows="4" placeholder="write_message..."></textarea>
+            </label>
+            <button class="btn btn--hud" type="button">
+              <span class="btn__ring"></span>
+              <span class="btn__text">Transmit</span>
+              <span class="btn__corner btn__corner--tl"></span>
+              <span class="btn__corner btn__corner--tr"></span>
+              <span class="btn__corner btn__corner--bl"></span>
+              <span class="btn__corner btn__corner--br"></span>
+            </button>
+            <div class="tiny dim">Static site note: hook this form to a service (Formspree/Netlify) if needed.</div>
+          </form>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer__left">© <span id="year"></span> Padam T</div>
+        <div class="footer__right dim">built with HTML/CSS/JS — cyber UI</div>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Optional audio (you provide assets/audio/ambient.mp3) -->
+  <audio id="ambient" loop preload="none">
+    <source src="assets/audio/ambient.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
